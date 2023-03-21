@@ -7,6 +7,7 @@ const TileContainer = (props) => { //props.sort = true/false
 
 
     //This always will sort by weight
+    //console.log(props.sort)
     const sorted = props.hogs.slice().sort((a, b) => {
       if (a.weight === b.weight)
         return 0;
@@ -20,7 +21,8 @@ const TileContainer = (props) => { //props.sort = true/false
     
   return (
     <div className="ui grid container">
-        {props.hogs.map(el => (<Tile key={uuid()} hog={el} showing={showing} setShowing={setShowing}/>))}
+        { props.sort ? sorted.map(el => (<Tile key={uuid()} hog={el} showing={showing} setShowing={setShowing}/>)) :
+        props.hogs.map(el => (<Tile key={uuid()} hog={el} showing={showing} setShowing={setShowing}/>))}
     </div>
   )
 }

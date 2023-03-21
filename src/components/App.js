@@ -3,7 +3,6 @@ import Nav from "./Nav";
 import TileContainer from "./TileContainer";
 import hogs from "../porkers_data";
 /*
-Add a filter for isGreased
 Add a sort by weight
 */
 function App() {
